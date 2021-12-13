@@ -60,6 +60,9 @@ const Backdrop = ({ items, scrollX }) => {
   const { width, height } = useWindowDimensions()
   let BACKDROP_HEIGHT = height * .6
   let ITEM_SIZE = width * .72
+  if (width >= 1024) {
+    ITEM_SIZE = width * .45
+  }
   return (
     <View style={{
       position: 'absolute',
@@ -130,12 +133,18 @@ export default function App() {
   const { width, height } = useWindowDimensions()
   const scrollX = React.useRef(new Animated.Value(0)).current
   let ITEM_SIZE = width * .72
+  if (width >= 1024) {
+    ITEM_SIZE = width * .45
+  }
   let SPACING = 10
   let POSTER_HEIGHT = height * .4
+  if (width >= 720) {
+    POSTER_HEIGHT = height * .6
+  }
   let SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar hidden />
+      <StatusBar hidden translucent backgroundColor='transparent' />
       <Backdrop items={DATA_ITEMS} scrollX={scrollX} />
       <Animated.FlatList
         data={DATA_ITEMS}
