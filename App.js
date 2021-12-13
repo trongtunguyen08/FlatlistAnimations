@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { Text, View, useWindowDimensions, FlatList, Animated, Image, Platform } from 'react-native'
+import { Text, View, useWindowDimensions, FlatList, Animated, Image, Platform, StatusBar } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 
 const DATA = [
@@ -144,7 +143,7 @@ export default function App() {
   let SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar hidden translucent backgroundColor='transparent' />
+      <StatusBar barStyle='auto' translucent backgroundColor='transparent' />
       <Backdrop items={DATA_ITEMS} scrollX={scrollX} />
       <Animated.FlatList
         data={DATA_ITEMS}
