@@ -5,7 +5,6 @@ import {
     useWindowDimensions,
     Image,
     Animated,
-    StatusBar,
     StatusBar
 } from 'react-native'
 import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet'
